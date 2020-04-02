@@ -226,7 +226,7 @@ function deletepr(){
 
     if(warning == true){
     $.delete(`${url}/todo/${maincont.id}`,function(responseText){
-        
+
         main.removeChild(maincont);
         console.log(responseText);   
     });
@@ -258,6 +258,7 @@ let editlabel = prompt("Edit your project:",label.innerText);
 }
 
 addtodolist.onclick = newtodo;
+
 
 function taskdel(){
 
