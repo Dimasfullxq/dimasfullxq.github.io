@@ -439,18 +439,8 @@ function unfinishtask(){
         console.log(responseText);
     });
 
-
     ul.removeChild(li);
 
-    let list = ul.querySelectorAll('li');
-
-    if(list.length>0){
-        
-        list[0].style.borderTopLeftRadius = "10px";
-        list[0].style.borderTopRightRadius = "10px";
-
-    }
-    
     let unfinishedul = ul.parentNode.querySelector('.taskmenu');
     let unfinishedli = createnewelement(text,li.id);
     unfinishedul.appendChild(unfinishedli);
