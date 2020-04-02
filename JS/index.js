@@ -175,7 +175,7 @@ function addnewtask() {
       });  
      
     }
-  }
+ }
 
 function addnewproject(projectname,id){
     
