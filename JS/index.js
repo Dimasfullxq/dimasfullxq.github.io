@@ -36,6 +36,9 @@ function initData() {
             let taskmenu = todos[i].querySelector('.taskmenu');
             let finishedtasks = todos[i].querySelector('.finishedtasks');
             let priortasks = todos[i].querySelector('.priortasks');
+            let list = finishedtasks.querySelectorAll('li');
+            list[0].style.borderTopLeftRadius = "10px";
+            list[0].style.borderTopRightRadius = "10px";
 
             for(let j = 0;j<responseText.todolist[i].tasks.length;j++){
                 if(!responseText.todolist[i].tasks[j].status){
@@ -83,9 +86,6 @@ function initData() {
 
                 }
             }
-            let list = finishedtasks.querySelectorAll('li');
-            list[0].style.borderTopLeftRadius = "10px";
-            list[0].style.borderTopRightRadius = "10px";
         }  
      });
   }
