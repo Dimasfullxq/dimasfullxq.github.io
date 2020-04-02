@@ -83,11 +83,10 @@ function initData() {
 
                 }
             }
-        }
-                let list = finishedtasks.querySelectorAll('li');
-                list[0].style.borderTopLeftRadius = "10px";
-                list[0].style.borderTopRightRadius = "10px";
-          
+            let list = finishedtasks.querySelectorAll('li');
+            list[0].style.borderTopLeftRadius = "10px";
+            list[0].style.borderTopRightRadius = "10px";
+        }  
      });
   }
 
