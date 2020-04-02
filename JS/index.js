@@ -392,11 +392,7 @@ let text = li.querySelector('label').innerText;
 let ul = li.parentNode;
 let maincont = ul.parentNode;
 
-$.put(`${url}/todo/${maincont.id}/finish/task/${li.id}`,{
-
-finishedName: text,
-
-}, function(responseText){
+$.put(`${url}/todo/${maincont.id}/finish/task/${li.id}`, function(responseText){
    console.log(responseText);
    
    
@@ -439,16 +435,21 @@ function unfinishtask(){
     let ul = li.parentNode;
     let maincont = ul.parentNode;
    
-    $.put(`${url}/todo/${maincont.id}/unfinish/task/${li.id}`,{
-
-      unfinishedName: text,
-    
-    }, function(responseText){
+    $.put(`${url}/todo/${maincont.id}/unfinish/task/${li.id}`, function(responseText){
         console.log(responseText);
     });
 
 
     ul.removeChild(li);
+
+    let list = ul.querySelectorAll('li');
+
+    if(list.length>0){
+        
+        list[0].style.borderTopLeftRadius = "10px";
+        list[0].style.borderTopRightRadius = "10px";
+
+    }
     
     let unfinishedul = ul.parentNode.querySelector('.taskmenu');
     let unfinishedli = createnewelement(text,li.id);
