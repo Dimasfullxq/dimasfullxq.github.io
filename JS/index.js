@@ -222,11 +222,12 @@ function deletepr(){
     let maincont = head.parentNode;
     let main = maincont.parentNode;
     let warning = confirm("Are you sure that you want to delete this project?");
-    main.removeChild(maincont);
+    
 
     if(warning == true){
     $.delete(`${url}/todo/${maincont.id}`,function(responseText){
-
+        
+        main.removeChild(maincont);
         console.log(responseText);   
     });
     }
@@ -272,7 +273,7 @@ $.delete(`${url}/todo/${maincont.id}/task/${listitem.id}`,function(responseText)
 });
 }
 
-let prevlabel;
+
 function tasked(){
   
     let li = this.parentNode;
@@ -421,23 +422,6 @@ list[0].style.borderTopLeftRadius = "10px";
 list[0].style.borderTopRightRadius = "10px";
 
 
-}
-
-function deletefinished(){
-    let li = this.parentNode;
-    let ul = li.parentNode;
-    let maincont = ul.parentNode;
-   
-
-    $.put(`http://localhost:3000/todo/${maincont.id}/finish/task/${li.id}`,{
-
-
-    }, function(responseText){
-        console.log(responseText);
-        ul.removeChild(li);
-    });
-    
-    
 }
 
 function unfinishtask(){
