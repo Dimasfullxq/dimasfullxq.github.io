@@ -37,8 +37,10 @@ function initData() {
             let finishedtasks = todos[i].querySelector('.finishedtasks');
             let priortasks = todos[i].querySelector('.priortasks');
             let list = finishedtasks.querySelectorAll('li');
+            if(list.length>0){
             list[0].style.borderTopLeftRadius = "10px";
             list[0].style.borderTopRightRadius = "10px";
+            }
 
             for(let j = 0;j<responseText.todolist[i].tasks.length;j++){
                 if(!responseText.todolist[i].tasks[j].status){
