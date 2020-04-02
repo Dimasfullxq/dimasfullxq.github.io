@@ -80,6 +80,11 @@ function initData() {
                 finishedli.querySelector('.task_checkbox').onclick = unfinishtask;
                 
                 finishedtasks.appendChild(finishedli);
+
+                let list = finishedtasks.querySelectorAll('li');
+                list[0].style.borderTopLeftRadius = "10px";
+                list[0].style.borderTopRightRadius = "10px";
+
                 }
             }
         }
